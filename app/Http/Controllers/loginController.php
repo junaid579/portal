@@ -7,9 +7,6 @@ use App\loginModel;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-
-
-
 class loginController extends Controller
 {
     
@@ -38,10 +35,17 @@ class loginController extends Controller
      public function fetch(){
         $users = DB::table('people')->get();
         foreach ($users as $user) {
-    	echo $user->username;
-   		echo "&nbsp";
-  		echo $user->password;
-   		echo "<br>";
+    	//$nameOfUser = $user->username;
+   		//$passOfUser = $user->password;
+ 			$data = array(
+            'nameOfUser'=>$user->username,
+            'passOfUser'=>$user->password 
+            );
+            //echo $user->username;
+            return view('display')->with($data);
+
+
+
 		}		
     }
 

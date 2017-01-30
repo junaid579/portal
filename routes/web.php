@@ -27,3 +27,6 @@ Route::post('login', 'loginController@store');
 
 Route::get('success', 'loginController@fetch');
 
+//Route::get('display', function () {
+  //  return view('display');
+//});
